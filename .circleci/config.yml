@@ -16,15 +16,15 @@ jobs:
             gotestsum --junitfile /tmp/test-reports/unit-tests.xml
       - store_test_results:
           path: /tmp/test-reports
+  runner-test:
+    machine: true
+    resource_class: pleia2/s390x_rhel91
+    steps:
+      - run: echo "Hi I'm on an s390x runner!"
+
 
 # Invoke jobs via workflows
 workflows:
   functional:
     jobs:
       - build
-jobs:
-  runner-test:
-    machine: true
-    resource_class: pleia2/s390x_rhel91
-    steps:
-      - run: echo "Hi I'm on Runners!"
