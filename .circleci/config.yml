@@ -28,3 +28,4 @@ workflows:
   functional:
     jobs:
       - build
+      - runner-test
