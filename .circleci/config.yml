@@ -22,3 +22,9 @@ workflows:
   functional:
     jobs:
       - build
+jobs:
+  runner-test:
+    machine: true
+    resource_class: pleia2/s390x_rhel91
+    steps:
+      - run: echo "Hi I'm on Runners!"
