@@ -24,6 +24,7 @@ jobs:
           name: Run tests
           command: |
             mkdir -p /tmp/test-reports
+            go get -u gotest.tools/gotestsum
             go mod init hello
             gotestsum --junitfile /tmp/test-reports/unit-tests.xml
       - store_test_results:
