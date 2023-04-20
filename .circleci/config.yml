@@ -25,6 +25,7 @@ jobs:
           command: |
             go mod init hello
             go install gotest.tools/gotestsum@latest
+      - run:
           name: Run tests
           command: |
             mkdir -p /tmp/test-reports
